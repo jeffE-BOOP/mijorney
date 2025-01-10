@@ -1,0 +1,153 @@
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Vendas - Curso Midjourney Magnético</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: black;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: #6a0dad;
+        }
+        h2, p {
+            margin: 10px 0;
+        }
+        button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: 2px solid #6a0dad;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #6a0dad;
+        }
+        .hidden {
+            display: none;
+        }
+        .testimonials, .simulation {
+            margin: 20px auto;
+            padding: 10px;
+            max-width: 800px;
+            background: #1a1a1a;
+            border: 2px solid #6a0dad;
+            border-radius: 8px;
+        }
+        .simulation span {
+            display: block;
+            margin: 5px 0;
+        }
+        .timer {
+            margin: 20px auto;
+            font-size: 1.2rem;
+            color: #6a0dad;
+        }
+        .contact {
+            margin-top: 40px;
+        }
+        .secure {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #00bfff;
+        }
+    </style>
+</head>
+<body>
+
+<div id="step1" class="container">
+    <h1>Pronto ou pronta !! para criar artes únicas?</h1>
+    <p>Desbloqueie seu potencial criativo e transforme suas ideias em obras incríveis com o nosso treinamento exclusivo!</p>
+    <button onclick="nextStep('step2')">Quero começar agora!</button>
+
+    <!-- Link para o vídeo gratuito -->
+    <p> Assista a aula gratis !! para começar sua jornada de criação!</p>
+    <a href=https://youtu.be/YroiF_k-siE target="_blank">
+        <button>Assista ao vídeo gratuito</button>
+    </a>
+</div>
+
+<div id="step2" class="container hidden">
+    <h1>ótima decisão ! </h1>
+    <p> chegou a hora de você se tornar um artista diferente. Aproveite!</p>
+    <button onclick="nextStep('step3')">Quero aprender mais!</button>
+</div>
+
+<div id="step3" class="container hidden">
+    <h1>Curso Midjourney Magnético: O Mundo das Referências!</h1>
+    <p>Descubra como milhares de pessoas estão transformando suas vidas com o treinamento exclusivo que criamos para você.</p>
+    <p>De <strike>R$997,00</strike> por apenas <strong>R$85,00</strong>! Mas atenção, essa oferta está disponível por tempo limitado!</p>
+
+    <div class="testimonials">
+        <h2>Depoimentos:</h2>
+        <p><strong>João Silva:</strong> Este curso é incrível ! Já vejo os resultados."</p>
+        <p><strong>Mariana Souza:</strong> Transformador! É a melhor decisão que tomei."</p>
+        <p><strong>Carlos Oliveira:</strong> Vale cada centavo. Não perca tempo!"</p>
+        <p><strong>Beatriz Lima:</strong> Minha vida mudou completamente após este treinamento."</p>
+    </div>
+
+    <div class="simulation">
+        <h2>Pessoas adquirindo o treinamento agora:</h2>
+        <div id="simulation-names"></div>
+    </div>
+
+    <div class="timer">Oferta disponível por tempo limitado: <span id="countdown">02:15:10</span></div>
+
+    <button onclick="window.location.href='https://www.seusite.com/compra'">Garantir minha vaga por R$85,00</button>
+    <div class="secure">Este site é seguro e confiável. Não é golpe. Garantimos sua privacidade e segurança durante todo o processo.</div>
+</div>
+
+<div id="step4" class="container hidden">
+    <h1>Alguma dúvida? Estamos aqui para ajudar!</h1>
+    <p>Entre em contato conosco pelo e-mail abaixo. Responderemos o mais rápido possível para garantir sua melhor experiência.</p>
+    <p><strong>E-mail:</strong> preira141412@gmail.com</p>
+    <button onclick="location.reload()">Voltar para Página Inicial</button>
+</div>
+
+<script>
+    const steps = ['step1', 'step2', 'step3', 'step4'];
+    const simulationNames = [
+        "Maria Santos", "João Pereira", "Ana Paula", "Lucas Silva", "Carla Almeida", "Felipe Costa",
+        "Amanda Nunes", "Gabriel Ferreira", "Juliana Martins", "Renato Oliveira", "Larissa Vieira", "Ricardo Alves"
+    ];
+
+    let currentIndex = 0;
+
+    function nextStep(nextId) {
+        document.getElementById(steps[currentIndex]).classList.add('hidden');
+        document.getElementById(nextId).classList.remove('hidden');
+        currentIndex++;
+    }
+
+    function startSimulation() {
+        const simulationContainer = document.getElementById('simulation-names');
+        let index = 0;
+        setInterval(() => {
+            if (index < simulationNames.length) {
+                const nameElement = document.createElement('span');
+                nameElement.textContent = `${simulationNames[index]} acabou de adquirir o treinamento!`;
+                simulationContainer.appendChild(nameElement);
+                index++;
+            }
+        }, 10000);
+    }
+
+    startSimulation();
+</script>
+
+</body>
+</html>
